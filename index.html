@@ -1,260 +1,632 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SE4All 2027 — International Workshop on Software Engineering and AI for All</title>
-<meta name="description" content="SE4All 2027: the first ICSE workshop on software engineering and AI for accessibility and inclusion. Saturday 1 May 2027, co-located with ICSE 2027 in Dublin, Ireland.">
-<meta property="og:title" content="SE4All 2027 — Software Engineering and AI for All">
-<meta property="og:description" content="The first ICSE workshop on software engineering and AI for accessibility and inclusion. Dublin, 1 May 2027. Papers due 13 November 2026.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SE4All 2027 · International Workshop on Software Engineering and AI for All · ICSE 2027, Dublin</title>
+<meta name="description" content="SE4All is the first ICSE workshop dedicated to software engineering and AI for accessibility and inclusion. Saturday 1 May 2027, Dublin, Ireland. Papers due 13 November 2026.">
+<meta name="theme-color" content="#1B2A49">
+<link rel="canonical" href="https://se4all.github.io/">
 <meta property="og:type" content="website">
+<meta property="og:title" content="SE4All 2027 · Software Engineering and AI for All">
+<meta property="og:description" content="First ICSE workshop on software engineering and AI for accessibility and inclusion. 1 May 2027, Dublin. Papers due 13 November 2026.">
+<meta property="og:url" content="https://se4all.github.io/">
+<meta property="og:image" content="https://se4all.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Event","name":"SE4All 2027: International Workshop on Software Engineering and AI for All","startDate":"2027-05-01","endDate":"2027-05-01","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"The Convention Centre Dublin","address":{"@type":"PostalAddress","addressLocality":"Dublin","addressCountry":"IE"}},"organizer":{"@type":"Organization","name":"SE4All","url":"https://se4all.github.io/"},"superEvent":{"@type":"Event","name":"ICSE 2027","url":"https://conf.researchr.org/home/icse-2027"},"url":"https://se4all.github.io/","image":"https://se4all.github.io/assets/og-image.png"}
+</script>
 <style>
-  :root{
-    --ink:#12100e;
-    --paper:#f7f4ee;
-    --paper-2:#efeae0;
-    --line:#d8d1c4;
-    --accent:#1a5c4a;
-    --accent-2:#b03d16;
-    --muted:#635c51;
-    --maxw:1060px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;scroll-padding-top:80px;}
-  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;} *{animation:none!important;transition:none!important;}}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
-  h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.12;font-weight:900;letter-spacing:-0.012em;}
-  a{color:var(--accent);text-underline-offset:3px;}
-  a:hover{color:var(--accent-2);}
-  :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px;}
-  .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:.7rem 1.1rem;z-index:100;}
-  .skip:focus{left:0;color:#fff;}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+/* ---------- tokens ---------- */
+:root{
+  --navy:#1B2A49; --navy-2:#2C3E66; --ink:#1B2A49; --ink-2:#4B587A; --ink-3:#6B7693;
+  --paper:#FFFFFF; --paper-2:#F4F6FA; --paper-3:#E8ECF3; --line:#D8DEE9;
+  --teal:#1FA6A0; --teal-ink:#127C77; --coral:#F26B5E; --amber:#F5A623; --green:#2BB673; --blue:#3D7BE0; --violet:#7B61FF;
+  --ring-1:#F26B5E; --ring-2:#F5A623; --ring-3:#2BB673; --ring-4:#1FA6A0; --ring-5:#3D7BE0; --ring-6:#7B61FF;
+  --focus:#F5A623;
+  --font-display:"Outfit",system-ui,sans-serif;
+  --font-body:"Work Sans",system-ui,sans-serif;
+  --fs:1rem; --ls:0; --lh:1.6; --ws:0;
+  --radius:14px; --shadow:0 12px 40px rgba(27,42,73,.10);
+  --max:1120px;
+}
+html[data-theme="dark"]{
+  --navy:#F7F5EF; --navy-2:#DDE2EE; --ink:#F1F3F8; --ink-2:#B9C2D6; --ink-3:#8E9AB5;
+  --paper:#0F1A2E; --paper-2:#152342; --paper-3:#1D2E52; --line:#2A3B61;
+  --teal-ink:#5BD3CC; --shadow:0 12px 40px rgba(0,0,0,.35);
+}
+html[data-contrast="high"]{
+  --ink:#000; --ink-2:#000; --ink-3:#1a1a1a; --paper:#fff; --paper-2:#fff; --paper-3:#f2f2f2; --line:#000;
+  --teal:#0B6E6A; --teal-ink:#0B6E6A; --coral:#B3261E; --amber:#7A5000; --green:#0F6E3E; --blue:#123F9A; --violet:#4A2FCF; --navy:#000; --navy-2:#000;
+}
+html[data-theme="dark"][data-contrast="high"]{
+  --ink:#fff; --ink-2:#fff; --ink-3:#eaeaea; --paper:#000; --paper-2:#000; --paper-3:#141414; --line:#fff; --navy:#fff; --navy-2:#fff;
+  --teal:#5BE0DA; --teal-ink:#5BE0DA; --coral:#FF8F84; --amber:#FFC85A; --green:#5FE09E; --blue:#7FAAFF; --violet:#B39DFF;
+}
+html[data-motion="reduced"] *,html[data-motion="reduced"] *::before,html[data-motion="reduced"] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+html[data-spacing="wide"]{--ls:.04em; --lh:1.9; --ws:.12em}
 
-  header.bar{border-bottom:1px solid var(--line);background:rgba(247,244,238,.96);backdrop-filter:blur(6px);position:sticky;top:0;z-index:50;}
-  .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:62px;flex-wrap:wrap;}
-  .brand{font-family:"Fraunces",serif;font-weight:900;font-size:1.12rem;letter-spacing:-.02em;text-decoration:none;color:var(--ink);}
-  .brand span{color:var(--accent);}
-  nav.top ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;flex-wrap:wrap;}
-  nav.top a{font-size:.9rem;font-weight:600;text-decoration:none;color:var(--ink);}
-  nav.top a:hover{color:var(--accent-2);}
+/* ---------- base ---------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:var(--fs);line-height:var(--lh);letter-spacing:var(--ls);word-spacing:var(--ws);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.12;margin:0 0 .5em;color:var(--ink);letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,5.2vw,4.2rem);font-weight:800}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:600}
+p{margin:0 0 1em;max-width:68ch}
+a{color:var(--teal-ink);text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2.5px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+button{font:inherit;color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+section{padding:clamp(56px,9vw,112px) 0;scroll-margin-top:84px}
+section + section{border-top:1px solid var(--line)}
+.lead{font-size:1.15rem;color:var(--ink-2);max-width:60ch}
+.muted{color:var(--ink-3)}
+.two{display:grid;gap:clamp(24px,4vw,56px);grid-template-columns:1fr 1fr;align-items:start}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
 
-  .hero{padding:72px 0 54px;border-bottom:1px solid var(--line);}
-  .eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 16px;}
-  .hero h1{font-size:clamp(2.3rem,6vw,4rem);margin:0 0 20px;max-width:17ch;}
-  .hero h1 em{font-style:normal;color:var(--accent);}
-  .lede{font-size:1.18rem;max-width:62ch;margin:0 0 28px;color:#302c26;}
-  .facts{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:10px;overflow:hidden;max-width:660px;background:var(--paper-2);}
-  .fact{flex:1 1 30%;min-width:158px;padding:15px 19px;border-right:1px solid var(--line);}
-  .fact:last-child{border-right:none;}
-  .fact .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin:0 0 3px;}
-  .fact .v{font-family:"Fraunces",serif;font-weight:600;font-size:1.02rem;margin:0;}
-  .cta-row{margin-top:28px;display:flex;gap:13px;flex-wrap:wrap;}
-  .btn{display:inline-block;font-weight:600;font-size:1rem;text-decoration:none;padding:12px 21px;border-radius:8px;border:2px solid var(--accent);}
-  .btn.solid{background:var(--accent);color:#fff;}
-  .btn.solid:hover{background:#123f32;color:#fff;}
-  .btn.ghost{color:var(--accent);}
-  .btn.ghost:hover{background:var(--paper-2);color:var(--accent);}
+/* ---------- skip link ---------- */
+.skip{position:absolute;left:12px;top:-60px;background:var(--navy);color:var(--paper);padding:10px 16px;border-radius:10px;z-index:100;font-weight:600;transition:top .15s}
+.skip:focus{top:12px}
 
-  section{padding:60px 0;border-bottom:1px solid var(--line);}
-  section h2{font-size:clamp(1.65rem,3.4vw,2.3rem);margin:0 0 6px;}
-  .section-lead{color:var(--muted);font-size:.95rem;font-weight:600;letter-spacing:.02em;margin:0 0 26px;text-transform:uppercase;}
-  section p{max-width:72ch;}
-  h3.sub{font-size:1.18rem;margin:32px 0 8px;}
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:14px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--font-display);font-weight:800;font-size:1.35rem;letter-spacing:-.01em}
+.brand .four{color:var(--teal)}
+.brand svg{width:36px;height:36px}
+nav.main{margin-left:auto;display:flex;gap:4px}
+nav.main a{text-decoration:none;color:var(--ink-2);padding:8px 12px;border-radius:9px;font-weight:500;font-size:.95rem}
+nav.main a:hover,nav.main a[aria-current="true"]{background:var(--paper-2);color:var(--ink)}
+.tools{display:flex;gap:8px;align-items:center}
+.iconbtn{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 14px;border:1.5px solid var(--line);background:var(--paper);border-radius:11px;cursor:pointer;font-weight:500;font-size:.92rem}
+.iconbtn:hover{border-color:var(--teal);background:var(--paper-2)}
+.iconbtn svg{width:18px;height:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 20px;border-radius:12px;border:0;font-weight:600;font-size:1rem;text-decoration:none;cursor:pointer;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--teal);color:#fff;box-shadow:0 8px 24px rgba(31,166,160,.32)}
+html[data-theme="dark"] .btn.primary,html[data-contrast="high"] .btn.primary{color:#fff;box-shadow:none}
+.btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--teal)}
+.menubtn{display:none}
+@media (max-width:980px){
+  nav.main{display:none;position:absolute;left:0;right:0;top:72px;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;padding:10px}
+  nav.main.open{display:flex}
+  .menubtn{display:inline-flex;margin-left:auto}
+  .tools .hide-sm{display:none}
+}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:linear-gradient(90deg,var(--ring-1),var(--ring-2),var(--ring-3),var(--ring-4),var(--ring-5),var(--ring-6))}
 
-  .topics{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(276px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
-  .topics li{background:var(--paper);padding:17px 19px;font-size:.96rem;}
-  .topics li b{display:block;font-family:"Fraunces",serif;font-size:1rem;margin-bottom:3px;}
+/* ---------- accessibility panel ---------- */
+.a11y{position:fixed;right:18px;bottom:18px;z-index:60;width:min(360px,calc(100vw - 36px));background:var(--paper);border:1.5px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px 18px 8px;display:none}
+.a11y[data-open="true"]{display:block}
+.a11y h2{font-size:1.15rem;margin:0 0 4px}
+.a11y p{font-size:.9rem;margin-bottom:12px}
+.a11y .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.a11y .row label{font-weight:500}
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{border:0;background:transparent;padding:6px 12px;cursor:pointer;font-weight:500}
+.seg button[aria-pressed="true"]{background:var(--teal);color:#fff}
+.switch{position:relative;width:48px;height:28px;border-radius:14px;border:0;background:var(--line);cursor:pointer;flex:none}
+.switch::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:left .15s}
+.switch[aria-checked="true"]{background:var(--teal)}
+.switch[aria-checked="true"]::after{left:23px}
+.a11y .foot{display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--line)}
+.a11y .foot button{border:0;background:none;color:var(--teal-ink);cursor:pointer;font-weight:600;padding:6px 0}
+.a11y-fab{position:fixed;right:18px;bottom:18px;z-index:59;height:56px;padding:0 18px 0 14px;border-radius:28px;border:0;background:var(--navy);color:var(--paper);display:inline-flex;align-items:center;gap:10px;font-weight:600;cursor:pointer;box-shadow:var(--shadow)}
+.a11y-fab svg{width:24px;height:24px}
+.a11y[data-open="true"] ~ .a11y-fab{display:none}
+@media (max-width:600px){.a11y-fab{padding:0 16px;font-size:0}.a11y-fab svg{width:26px;height:26px}}
 
-  .types{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:17px;margin-top:20px;}
-  .card{border:1px solid var(--line);border-radius:10px;padding:21px;background:var(--paper-2);}
-  .card h3{font-size:1.16rem;margin:0 0 5px;}
-  .card .len{font-size:.78rem;font-weight:700;color:var(--accent-2);letter-spacing:.06em;text-transform:uppercase;margin:0 0 4px;}
-  .card p{margin:0;font-size:.95rem;}
+/* ---------- hero ---------- */
+.hero{padding:clamp(40px,7vw,96px) 0 clamp(48px,7vw,88px);position:relative;overflow:hidden}
+.hero .two{align-items:center;grid-template-columns:1.15fr .85fr}
+@media (max-width:820px){.hero .two{grid-template-columns:1fr}}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:var(--ink-2);margin-bottom:18px;font-size:.98rem}
+.kicker .dot{width:10px;height:10px;border-radius:50%;background:var(--coral)}
+.hero h1 .thin{font-weight:600;color:var(--ink-2);display:block;font-size:.55em;letter-spacing:0;margin-top:.35em;line-height:1.3}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:28px 0 30px;max-width:640px}
+@media (max-width:560px){.facts{grid-template-columns:1fr}}
+.fact{border:1.5px solid var(--line);border-radius:14px;padding:12px 16px;background:var(--paper-2)}
+.fact b{display:block;font-family:var(--font-display);font-size:1.05rem;font-weight:700;line-height:1.25;margin-bottom:2px}
+.fact span{font-size:.9rem;color:var(--ink-3)}
+.fact.due{border-color:var(--coral)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.count{margin-top:26px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;color:var(--ink-2)}
+.count strong{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--ink);line-height:1}
+.count .unit{font-size:.9rem}
+.emblem{width:min(100%,460px);margin:0 auto;display:block}
+.emblem .seg{stroke-linecap:round;fill:none;stroke-width:42}
+.emblem .four{fill:var(--navy)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+.emblem .seg{stroke-dasharray:106;stroke-dashoffset:106;animation:draw .55s cubic-bezier(.2,.7,.2,1) forwards}
+.emblem .seg:nth-child(1){animation-delay:.05s}.emblem .seg:nth-child(2){animation-delay:.17s}.emblem .seg:nth-child(3){animation-delay:.29s}.emblem .seg:nth-child(4){animation-delay:.41s}.emblem .seg:nth-child(5){animation-delay:.53s}.emblem .seg:nth-child(6){animation-delay:.65s}
+.emblem .four{transform-box:fill-box;transform-origin:center;animation:pop .5s .8s cubic-bezier(.2,.9,.3,1.3) both}
+@media (prefers-reduced-motion:reduce){.emblem .seg{stroke-dashoffset:0;animation:none}.emblem .four{animation:none}}
+.emblem.static .seg{stroke-dashoffset:0;animation:none}.emblem.static .four{animation:none}
+.emblem-cap{text-align:center;font-size:.9rem;color:var(--ink-3);margin-top:10px}
 
-  .note{margin-top:22px;padding:15px 19px;border-left:4px solid var(--accent);background:var(--paper-2);font-size:.89rem;color:#4a453d;max-width:72ch;border-radius:0 8px 8px 0;}
+/* ---------- about ---------- */
+.about .two p{max-width:none}
+.callout{background:var(--paper-2);border-left:5px solid var(--teal);border-radius:0 var(--radius) var(--radius) 0;padding:22px 26px;margin-top:8px}
+.callout h3{margin-top:0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tag{border:1.5px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.88rem;color:var(--ink-2);background:var(--paper)}
 
-  table.dates{width:100%;border-collapse:collapse;margin-top:20px;font-size:1rem;}
-  table.dates caption{text-align:left;color:var(--muted);font-size:.85rem;margin-bottom:10px;}
-  table.dates th,table.dates td{text-align:left;padding:12px 11px;border-bottom:1px solid var(--line);vertical-align:top;}
-  table.dates th{font-weight:700;font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);}
-  table.dates td.d{font-family:"Fraunces",serif;font-weight:600;white-space:nowrap;padding-right:22px;}
-  tr.key td{background:var(--paper-2);}
+/* ---------- topics ---------- */
+.topics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+@media (max-width:900px){.topics-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.topics-grid{grid-template-columns:1fr}}
+.topic{position:relative;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--paper);padding:0;overflow:hidden}
+.topic summary{list-style:none;cursor:pointer;padding:20px 20px 18px 24px;font-family:var(--font-display);font-weight:600;font-size:1.1rem;display:flex;align-items:center;gap:12px}
+.topic summary::-webkit-details-marker{display:none}
+.topic summary::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--c);flex:none;box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 22%,transparent)}
+.topic summary::after{content:"+";margin-left:auto;font-weight:500;color:var(--ink-3);font-size:1.3rem;line-height:1}
+.topic[open] summary::after{content:"−"}
+.topic[open]{border-color:var(--c)}
+.topic:hover{border-color:var(--c)}
+.topic .body{padding:0 24px 20px;color:var(--ink-2);font-size:.98rem}
+.topic .body p{margin:0}
+.topics-foot{display:flex;gap:12px;align-items:center;margin-top:20px;flex-wrap:wrap}
 
-  .people{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:1px;margin-top:18px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
-  .person{background:var(--paper);padding:17px 19px;}
-  .person .n{font-family:"Fraunces",serif;font-weight:600;font-size:1.04rem;}
-  .person .r{font-size:.76rem;color:var(--accent-2);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-top:2px;}
-  .person .a{font-size:.88rem;color:#4a453d;margin-top:4px;}
+/* ---------- submissions ---------- */
+.tracks{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+@media (max-width:700px){.tracks{grid-template-columns:1fr}}
+.track{border:1.5px solid var(--line);border-radius:18px;padding:26px;background:var(--paper-2);position:relative}
+.track .pages{font-family:var(--font-display);font-size:2.8rem;font-weight:800;line-height:1;color:var(--teal-ink)}
+.track .pages small{font-size:1rem;font-weight:600;color:var(--ink-2);margin-left:6px}
+.track h3{margin:10px 0 6px}
+.track p{color:var(--ink-2);margin:0}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+@media (max-width:700px){.rules{grid-template-columns:1fr}}
+.rule{padding:16px 18px;border-radius:var(--radius);border:1.5px dashed var(--line)}
+.rule b{display:block;font-family:var(--font-display);font-weight:600;margin-bottom:4px}
+.rule span{color:var(--ink-2);font-size:.95rem}
+.note{font-size:.9rem;color:var(--ink-3);margin-top:22px;max-width:76ch}
 
-  footer{padding:46px 0 58px;background:var(--ink);color:#e9e4d9;}
-  footer .wrap{display:flex;flex-wrap:wrap;gap:36px;justify-content:space-between;}
-  footer h2{color:#fff;font-size:1.34rem;margin:0 0 10px;}
-  footer a{color:#8fd0bd;}
-  footer a:hover{color:#fff;}
-  footer p{margin:6px 0 0;font-size:1.02rem;}
-  .foot-note{font-size:.82rem;color:#a49d90;margin-top:24px;max-width:58ch;}
+/* ---------- dates ---------- */
+.timeline{list-style:none;margin:30px 0 0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:3px;background:var(--line);border-radius:3px}
+.timeline .fill{position:absolute;left:15px;top:8px;width:3px;background:var(--teal);border-radius:3px;height:0;transition:height .8s ease}
+.tl{position:relative;padding:0 0 26px 52px;display:grid;grid-template-columns:200px 1fr;gap:6px 20px;align-items:baseline}
+@media (max-width:600px){.tl{grid-template-columns:1fr;gap:2px}}
+.tl:last-child{padding-bottom:0}
+.tl::before{content:"";position:absolute;left:8px;top:6px;width:17px;height:17px;border-radius:50%;background:var(--paper);border:3px solid var(--line);box-sizing:border-box}
+.tl.done::before{background:var(--teal);border-color:var(--teal)}
+.tl.next::before{border-color:var(--coral);background:var(--paper);box-shadow:0 0 0 5px color-mix(in srgb,var(--coral) 22%,transparent)}
+.tl time{font-family:var(--font-display);font-weight:700;font-size:1.15rem}
+.tl .what{color:var(--ink-2)}
+.tl.next .what{color:var(--ink);font-weight:500}
+.tl .pill{display:inline-block;margin-left:10px;font-size:.78rem;font-weight:600;border-radius:999px;padding:2px 9px;background:var(--coral);color:#fff;vertical-align:middle}
+.tl.done .pill{background:var(--teal)}
+.aoe{margin-top:26px;font-size:.92rem;color:var(--ink-3)}
+.cal{margin-top:22px}
+
+/* ---------- committee ---------- */
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:28px}
+.person{display:flex;gap:14px;align-items:flex-start;border:1.5px solid var(--line);border-radius:var(--radius);padding:16px;background:var(--paper)}
+.person .av{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-weight:700;color:#fff;font-size:1.05rem;background:var(--c)}
+.person b{display:block;font-family:var(--font-display);font-weight:600;font-size:1.05rem}
+.person .role{color:var(--teal-ink);font-weight:500;font-size:.9rem}
+.person .aff{color:var(--ink-3);font-size:.88rem;line-height:1.4}
+.pc{margin-top:36px;display:grid;grid-template-columns:1.2fr 1fr;gap:26px;align-items:start}
+@media (max-width:820px){.pc{grid-template-columns:1fr}}
+.stat-row{display:flex;gap:24px;flex-wrap:wrap;margin-top:14px}
+.stat{font-family:var(--font-display)}
+.stat b{font-size:2rem;font-weight:800;display:block;line-height:1;color:var(--teal-ink)}
+.stat span{color:var(--ink-3);font-size:.9rem}
+
+/* ---------- contact ---------- */
+.contact-card{background:var(--navy);color:var(--paper);border-radius:22px;padding:clamp(28px,5vw,52px);display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
+html[data-theme="dark"] .contact-card{background:var(--paper-2);color:var(--ink);border:1.5px solid var(--line)}
+@media (max-width:820px){.contact-card{grid-template-columns:1fr}}
+.contact-card h2,.contact-card p{color:inherit}
+.contact-card a.mail{color:inherit;font-family:var(--font-display);font-weight:600;font-size:clamp(1rem,2.2vw,1.35rem);word-break:break-all}
+.contact-card .btn.light{background:var(--paper);color:var(--navy)}
+html[data-theme="dark"] .contact-card .btn.light{background:var(--teal);color:#fff}
+.links{display:flex;flex-direction:column;gap:10px}
+.links a{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:1.5px solid rgba(255,255,255,.25);border-radius:12px;text-decoration:none;color:inherit;font-weight:500}
+html[data-theme="dark"] .links a{border-color:var(--line)}
+.links a:hover{background:rgba(255,255,255,.08)}
+.links a svg{width:18px;height:18px;flex:none}
+
+/* ---------- footer ---------- */
+footer{padding:36px 0 56px;color:var(--ink-3);font-size:.9rem}
+footer .row{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+footer img{height:40px}
+footer .stmt{max-width:70ch;margin-top:14px}
+.badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.badge{font-size:.82rem;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 
-<header class="bar">
-  <div class="wrap">
-    <a class="brand" href="#top">SE4All <span>2027</span></a>
-    <nav class="top" aria-label="Primary">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#topics">Topics</a></li>
-        <li><a href="#submit">Submissions</a></li>
-        <li><a href="#dates">Dates</a></li>
-        <li><a href="#committee">Committee</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="SE4All 2027 home">
+      <svg viewBox="0 0 300 300" aria-hidden="true" focusable="false">
+        <g fill="none" stroke-width="42" stroke-linecap="round">
+          <path d="M 99.20 30.33 A 130 130 0 0 1 200.80 30.33" stroke="#F26B5E"/>
+          <path d="M 228.24 46.18 A 130 130 0 0 1 279.03 134.16" stroke="#F5A623"/>
+          <path d="M 279.03 165.84 A 130 130 0 0 1 228.24 253.82" stroke="#2BB673"/>
+          <path d="M 200.80 269.67 A 130 130 0 0 1 99.20 269.67" stroke="#1FA6A0"/>
+          <path d="M 71.76 253.82 A 130 130 0 0 1 20.97 165.84" stroke="#3D7BE0"/>
+          <path d="M 20.97 134.16 A 130 130 0 0 1 71.76 46.18" stroke="#7B61FF"/>
+        </g>
+        <path transform="translate(154 235) scale(1.6)" d="M-42.525 -36.75 -7.725 -105.9H17.925L-17.625 -36.75ZM-42.525 -23.55V-36.75L-34.725 -43.5H42.375V-23.55ZM7.425 0V-65.55H30.525V0Z" fill="currentColor"/>
+      </svg>
+      <span>SE<span class="four">4</span>All</span>
+    </a>
+    <nav class="main" id="mainnav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#topics">Topics</a>
+      <a href="#submit">Submissions</a>
+      <a href="#dates">Dates</a>
+      <a href="#committee">Committee</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <div class="tools">
+      <button class="iconbtn hide-sm" id="themebtn" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <span>Dark</span>
+      </button>
+      <a class="btn primary hide-sm" href="https://icse2027-se4all.hotcrp.com/" target="_blank" rel="noopener">Submit a paper</a>
+      <button class="iconbtn menubtn" id="menubtn" type="button" aria-expanded="false" aria-controls="mainnav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
   </div>
 </header>
 
 <main id="main">
-<a id="top"></a>
 
-<section class="hero" aria-labelledby="h-title">
-  <div class="wrap">
-    <p class="eyebrow">First edition &middot; Co-located with ICSE 2027</p>
-    <h1 id="h-title">Software Engineering <br>and AI <em>for All</em></h1>
-    <p class="lede">SE4All is the first ICSE workshop dedicated to software engineering and AI for accessibility and inclusion. It brings together researchers, practitioners, and people with lived experience of disability to build software that works for everyone.</p>
-    <div class="facts">
-      <div class="fact"><p class="k">When</p><p class="v">Saturday 1 May 2027</p></div>
-      <div class="fact"><p class="k">Where</p><p class="v">Dublin, Ireland</p></div>
-      <div class="fact"><p class="k">Papers due</p><p class="v">13 November 2026</p></div>
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap two">
+    <div>
+      <div class="kicker"><span class="dot" aria-hidden="true"></span>First edition, co-located with ICSE 2027 in Dublin</div>
+      <h1>Software engineering and AI for all
+        <span class="thin">The first ICSE workshop dedicated to accessibility and inclusion</span>
+      </h1>
+      <p class="lead">SE4All brings together researchers, practitioners, and people with lived experience of disability to build software that works for everyone.</p>
+      <div class="facts" role="list">
+        <div class="fact" role="listitem"><b>Saturday 1 May 2027</b><span>Workshop day</span></div>
+        <div class="fact" role="listitem"><b>Dublin, Ireland</b><span>Convention Centre Dublin</span></div>
+        <div class="fact due" role="listitem"><b>13 November 2026</b><span>Papers due</span></div>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="https://icse2027-se4all.hotcrp.com/" target="_blank" rel="noopener">Submit a paper</a>
+        <a class="btn ghost" href="#submit">Read the call</a>
+      </div>
+      <div class="count" id="countdown" aria-live="polite">
+        <strong id="cd-num">—</strong><span class="unit" id="cd-unit">days until the submission deadline</span>
+      </div>
     </div>
-    <div class="cta-row">
-      <a class="btn solid" href="#submit">Read the call</a>
-      <a class="btn ghost" href="https://icse2027-se4all.hotcrp.com/">Submit a paper</a>
+    <div>
+      <svg class="emblem" id="emblem" viewBox="0 0 300 300" role="img" aria-labelledby="emblem-title emblem-desc">
+        <title id="emblem-title">SE4All emblem</title>
+        <desc id="emblem-desc">A ring of six coloured segments, one for each part of a diverse community, around a bold numeral four.</desc>
+        <g>
+          <path class="seg" d="M 99.20 30.33 A 130 130 0 0 1 200.80 30.33" stroke="var(--ring-1)"/>
+          <path class="seg" d="M 228.24 46.18 A 130 130 0 0 1 279.03 134.16" stroke="var(--ring-2)"/>
+          <path class="seg" d="M 279.03 165.84 A 130 130 0 0 1 228.24 253.82" stroke="var(--ring-3)"/>
+          <path class="seg" d="M 200.80 269.67 A 130 130 0 0 1 99.20 269.67" stroke="var(--ring-4)"/>
+          <path class="seg" d="M 71.76 253.82 A 130 130 0 0 1 20.97 165.84" stroke="var(--ring-5)"/>
+          <path class="seg" d="M 20.97 134.16 A 130 130 0 0 1 71.76 46.18" stroke="var(--ring-6)"/>
+        </g>
+        <g transform="translate(154 235) scale(1.6)"><path class="four" d="M-42.525 -36.75 -7.725 -105.9H17.925L-17.625 -36.75ZM-42.525 -23.55V-36.75L-34.725 -43.5H42.375V-23.55ZM7.425 0V-65.55H30.525V0Z"/></g>
+      </svg>
+      <p class="emblem-cap">Six segments, one circle. Software that is built for everyone.</p>
     </div>
   </div>
 </section>
 
-<section id="about" aria-labelledby="h-about">
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
   <div class="wrap">
-    <h2 id="h-about">About the workshop</h2>
-    <p class="section-lead">Why SE4All, and why now</p>
-    <p>Software decides who can learn, work, bank, get care, and take part in public life. A large share of it still shuts out people with disabilities, older adults, and anyone facing a situational or cognitive barrier. At the same time, AI has moved into the heart of how software is built and used: it writes interface code, powers conversational agents, and increasingly makes decisions on a user's behalf. That is both a risk and an opening. The same models that can describe an image, caption a video, simplify dense text, or restructure a cluttered page are the tools that could close accessibility gaps at a scale that manual work has never reached, but only if we engineer and evaluate them with that goal in mind.</p>
-    <p>SE4All treats this as a software engineering problem. How do we capture accessibility in requirements, test and audit for it, build tools and pipelines around it, share the work between people and AI, and hold the results to account? The workshop keeps its feet in software engineering methodology and practice while drawing on the accessibility, HCI, and AI communities.</p>
-    <p>The timing is deliberate. The EU Accessibility Act is now in force, WCAG 3.0 is taking shape, and ICSE 2027 is hosted in Dublin, at the heart of the European policy landscape driving demand for accessible software.</p>
-
-    <h3 class="sub">What we want from the day</h3>
-    <p>We want people to leave with new collaborators and a clear sense of what to work on next. Alongside paper presentations, the programme makes room for short practitioner talks and facilitated breakout groups, and the notes from those groups feed a short community research roadmap that we circulate to everyone who attends.</p>
-    <p>We especially welcome experience reports and contributions from engineers and researchers with lived experience of disability. Their perspective keeps the work grounded in the needs of the people it is meant to serve, and we would rather build that in from the first edition than add it later.</p>
+    <h2>Why SE4All, and why now</h2>
+    <div class="two">
+      <div>
+        <p>Software decides who can learn, work, bank, get care, and take part in public life. A large share of it still shuts out people with disabilities, older adults, and anyone facing a situational or cognitive barrier.</p>
+        <p>At the same time, AI has moved into the heart of how software is built and used. It writes interface code, powers conversational agents, and increasingly makes decisions on a user's behalf. That is both a risk and an opening. The same models that can describe an image, caption a video, simplify dense text, or restructure a cluttered page are the tools that could close accessibility gaps at a scale that manual work has never reached, but only if we engineer and evaluate them with that goal in mind.</p>
+        <p>SE4All treats this as a software engineering problem. How do we capture accessibility in requirements, test and audit for it, build tools and pipelines around it, share the work between people and AI, and hold the results to account? The workshop keeps its feet in software engineering methodology and practice while drawing on the accessibility, HCI, and AI communities.</p>
+        <p>The timing is deliberate. The EU Accessibility Act is now in force, WCAG 3.0 is taking shape, and ICSE 2027 is hosted in Dublin, at the heart of the European policy landscape driving demand for accessible software.</p>
+        <div class="tags" aria-label="Communities the workshop draws on">
+          <span class="tag">Software engineering</span><span class="tag">Accessibility</span><span class="tag">Human computer interaction</span><span class="tag">AI and machine learning</span><span class="tag">Standards and policy</span>
+        </div>
+      </div>
+      <div>
+        <div class="callout">
+          <h3>What we want from the day</h3>
+          <p>We want people to leave with new collaborators and a clear sense of what to work on next. Alongside paper presentations, the programme makes room for short practitioner talks and facilitated breakout groups. The notes from those groups feed a short community research roadmap that we circulate to everyone who attends.</p>
+          <p style="margin:0">We especially welcome experience reports and contributions from engineers and researchers with lived experience of disability. Their perspective keeps the work grounded in the needs of the people it is meant to serve, and we would rather build that in from the first edition than add it later.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="topics" aria-labelledby="h-topics">
+<!-- ================= TOPICS ================= -->
+<section id="topics">
   <div class="wrap">
-    <h2 id="h-topics">Topics of interest</h2>
-    <p class="section-lead">Read broadly &middot; a paper need not be about disability in the narrow sense</p>
-    <p>SE4All welcomes research, tools, experience, and vision across the full software lifecycle, wherever software engineering and AI meet accessibility and inclusion. Topics include, but are not limited to:</p>
-    <ul class="topics">
-      <li><b>AI across the lifecycle</b>Generating, repairing, reviewing, and testing software, and what it means for accessibility and inclusion.</li>
-      <li><b>Human and AI together</b>Human-in-the-loop workflows and crowdsourcing for building and maintaining better software.</li>
-      <li><b>Testing and analysis</b>Automated testing, auditing, and quality assurance for accessibility, usability, and inclusive design.</li>
-      <li><b>Process and design</b>Requirements, architecture, design, and maintenance that treat inclusion as a first-class concern.</li>
-      <li><b>Empirical studies</b>Mining repositories, datasets, and benchmarks for inclusive software engineering.</li>
-      <li><b>Emerging interfaces</b>Accessibility of conversational agents, generated UIs, mobile, web, IoT, and smart environments.</li>
-      <li><b>Trust and fairness</b>Verification, dependability, fairness, and responsible engineering of AI-enabled software for diverse users.</li>
-      <li><b>Human and social aspects</b>Diversity, equity, standards and policy in practice (WCAG, EU Accessibility Act, Section 508), and education.</li>
-      <li><b>Experience reports</b>Industrial case studies and lessons learned from building software for all.</li>
-    </ul>
+    <h2>Topics of interest</h2>
+    <p class="lead">Read broadly. A paper need not be about disability in the narrow sense to fit, as long as it speaks to software engineering and AI for accessibility and inclusion. Open a topic to see what it covers.</p>
+    <div class="topics-grid">
+      <details class="topic" style="--c:var(--ring-1)"><summary>AI across the lifecycle</summary><div class="body"><p>Generating, repairing, reviewing, and testing software, and what it means for accessibility and inclusion.</p></div></details>
+      <details class="topic" style="--c:var(--ring-2)"><summary>Human and AI together</summary><div class="body"><p>Human in the loop workflows and crowdsourcing for building and maintaining better software.</p></div></details>
+      <details class="topic" style="--c:var(--ring-3)"><summary>Testing and analysis</summary><div class="body"><p>Automated testing, auditing, and quality assurance for accessibility, usability, and inclusive design.</p></div></details>
+      <details class="topic" style="--c:var(--ring-4)"><summary>Process and design</summary><div class="body"><p>Requirements, architecture, design, and maintenance that treat inclusion as a first class concern.</p></div></details>
+      <details class="topic" style="--c:var(--ring-5)"><summary>Empirical studies</summary><div class="body"><p>Mining repositories, datasets, and benchmarks for inclusive software engineering.</p></div></details>
+      <details class="topic" style="--c:var(--ring-6)"><summary>Emerging interfaces</summary><div class="body"><p>Accessibility of conversational agents, generated UIs, mobile, web, IoT, and smart environments.</p></div></details>
+      <details class="topic" style="--c:var(--ring-1)"><summary>Trust and fairness</summary><div class="body"><p>Verification, dependability, fairness, and responsible engineering of AI enabled software for diverse users.</p></div></details>
+      <details class="topic" style="--c:var(--ring-2)"><summary>Human and social aspects</summary><div class="body"><p>Diversity, equity, standards and policy in practice (WCAG, EU Accessibility Act, Section 508), and education.</p></div></details>
+      <details class="topic" style="--c:var(--ring-3)"><summary>Experience reports</summary><div class="body"><p>Industrial case studies and lessons learned from building software for all.</p></div></details>
+    </div>
+    <div class="topics-foot">
+      <button class="iconbtn" type="button" id="expandall">Expand all topics</button>
+      <span class="muted">If you are unsure whether your work fits, <a href="#contact">write to us and ask</a>.</span>
+    </div>
   </div>
 </section>
 
-<section id="submit" aria-labelledby="h-submit">
+<!-- ================= SUBMISSIONS ================= -->
+<section id="submit">
   <div class="wrap">
-    <h2 id="h-submit">Submissions</h2>
-    <p class="section-lead">Two tracks &middot; IEEE format &middot; single-blind review</p>
-    <p>All submissions must be in PDF and follow the IEEE Conference Proceedings format (10&nbsp;pt, IEEEtran). Each paper receives at least three reviews from the programme committee. Accepted papers appear in the ICSE 2027 Companion Proceedings, published by IEEE.</p>
-    <div class="types">
-      <div class="card">
-        <p class="len">Up to 8 pages</p>
+    <h2>Submissions</h2>
+    <p class="lead">Two tracks, IEEE format, single blind review. Every paper receives at least three reviews from the programme committee. Accepted papers appear in the ICSE 2027 Companion Proceedings, published by IEEE.</p>
+    <div class="tracks">
+      <div class="track">
+        <div class="pages">8<small>pages max</small></div>
         <h3>Regular papers</h3>
         <p>Original research, empirical studies, and tool papers, including references.</p>
       </div>
-      <div class="card">
-        <p class="len">Up to 5 pages</p>
+      <div class="track">
+        <div class="pages">5<small>pages max</small></div>
         <h3>Short papers</h3>
         <p>Work in progress, position and vision papers, emerging ideas, tool demonstrations, and industrial experience reports, including references.</p>
       </div>
     </div>
-    <p style="margin-top:22px">Position and emerging-ideas papers are judged on the strength of the idea rather than on how complete the results are. If you are unsure whether your work fits, write to us and ask.</p>
-    <div class="cta-row">
-      <a class="btn solid" href="https://icse2027-se4all.hotcrp.com/">Submit on HotCRP</a>
+    <div class="rules">
+      <div class="rule"><b>Format</b><span>PDF, IEEE Conference Proceedings template, 10 pt, IEEEtran.</span></div>
+      <div class="rule"><b>Review</b><span>Single blind. At least three reviews, judged on novelty, relevance, soundness, clarity, and the discussion it can spark.</span></div>
+      <div class="rule"><b>Ideas welcome</b><span>Position and emerging ideas papers are judged on the strength of the idea, not on how complete the results are.</span></div>
     </div>
-    <p class="note">The official publication date of the workshop proceedings is the date the proceedings are made available by IEEE. This date may be up to two weeks prior to the first day of ICSE 2027. The official publication date affects the deadline for any patent filings related to published work.</p>
+    <div class="cta" style="margin-top:28px">
+      <a class="btn primary" href="https://icse2027-se4all.hotcrp.com/" target="_blank" rel="noopener">Submit on HotCRP</a>
+      <a class="btn ghost" href="https://conf.researchr.org/home/icse-2027/se4all-2027" target="_blank" rel="noopener">Call on the ICSE site</a>
+    </div>
+    <p class="note">The official publication date of the workshop proceedings is the date the proceedings are made available by IEEE. This date may be up to two weeks prior to the first day of ICSE 2027 and affects the deadline for any patent filings related to published work.</p>
   </div>
 </section>
 
-<section id="dates" aria-labelledby="h-dates">
-  <div class="wrap">
-    <h2 id="h-dates">Important dates</h2>
-    <p class="section-lead">All deadlines are anywhere on Earth (AoE)</p>
-    <table class="dates">
-      <caption>SE4All 2027 schedule. Deadlines follow the uniform ICSE 2027 workshop timeline.</caption>
-      <thead>
-        <tr><th scope="col">Date</th><th scope="col">Milestone</th></tr>
-      </thead>
-      <tbody>
-        <tr class="key"><td class="d">13 November 2026</td><td>Paper submission deadline</td></tr>
-        <tr><td class="d">11 December 2026</td><td>Author notification</td></tr>
-        <tr><td class="d">20 January 2027</td><td>Accepted papers and programme published</td></tr>
-        <tr><td class="d">29 January 2027</td><td>Camera-ready deadline</td></tr>
-        <tr class="key"><td class="d">1 May 2027</td><td>SE4All 2027 workshop day, Dublin</td></tr>
-      </tbody>
-    </table>
+<!-- ================= DATES ================= -->
+<section id="dates">
+  <div class="wrap two">
+    <div>
+      <h2>Important dates</h2>
+      <p class="lead">Deadlines follow the uniform ICSE 2027 workshop timeline. All deadlines are anywhere on Earth.</p>
+      <div class="cal">
+        <a class="btn ghost" href="#" id="ics" download="SE4All-2027.ics">Add the deadline to your calendar</a>
+      </div>
+    </div>
+    <div>
+      <ol class="timeline" id="timeline">
+        <span class="fill" id="tlfill" aria-hidden="true"></span>
+        <li class="tl" data-date="2026-11-14T12:00:00Z"><time datetime="2026-11-13">13 November 2026</time><span class="what">Paper submission deadline</span></li>
+        <li class="tl" data-date="2026-12-12T12:00:00Z"><time datetime="2026-12-11">11 December 2026</time><span class="what">Author notification</span></li>
+        <li class="tl" data-date="2027-01-21T12:00:00Z"><time datetime="2027-01-20">20 January 2027</time><span class="what">Accepted papers and programme published</span></li>
+        <li class="tl" data-date="2027-01-30T12:00:00Z"><time datetime="2027-01-29">29 January 2027</time><span class="what">Camera ready deadline</span></li>
+        <li class="tl" data-date="2027-05-02T00:00:00Z"><time datetime="2027-05-01">1 May 2027</time><span class="what">SE4All 2027 workshop day, Dublin</span></li>
+      </ol>
+      <p class="aoe">Anywhere on Earth means the deadline passes when it is midnight in the last time zone on the planet.</p>
+    </div>
   </div>
 </section>
 
-<section id="committee" aria-labelledby="h-committee">
+<!-- ================= COMMITTEE ================= -->
+<section id="committee">
   <div class="wrap">
-    <h2 id="h-committee">Organising committee</h2>
-    <p class="section-lead">Ten organisers &middot; six countries &middot; four continents</p>
+    <h2>Organising committee</h2>
+    <p class="lead">Ten organisers from six countries and four continents, spanning software engineering, accessibility, formal methods, AI, machine learning, and data science.</p>
     <div class="people">
-      <div class="person"><div class="n">Muhammad Sohaib Ayub</div><div class="r">General Chair</div><div class="a">University of Galway, Ireland</div></div>
-      <div class="person"><div class="n">Umair ul Hassan</div><div class="r">Proceedings Chair</div><div class="a">University of Galway, Ireland</div></div>
-      <div class="person"><div class="n">Rosemary Monahan</div><div class="r">Programme Co-Chair</div><div class="a">Maynooth University, Ireland</div></div>
-      <div class="person"><div class="n">Asim Karim</div><div class="r">Programme Co-Chair</div><div class="a">Lahore University of Management Sciences, Pakistan</div></div>
-      <div class="person"><div class="n">Edward Curry</div><div class="r">Advisory Chair</div><div class="a">University of Galway, Ireland</div></div>
-      <div class="person"><div class="n">Safiullah Faizullah</div><div class="r">Advisory Chair</div><div class="a">Islamic University of Madinah, Saudi Arabia</div></div>
-      <div class="person"><div class="n">Mian Muhammad Awais</div><div class="r">Co-organiser</div><div class="a">Lahore University of Management Sciences, Pakistan</div></div>
-      <div class="person"><div class="n">Shafiq Alam</div><div class="r">Publicity Chair</div><div class="a">Massey University, New Zealand</div></div>
-      <div class="person"><div class="n">Affan Rauf</div><div class="r">Web Chair</div><div class="a">National University of Computer and Emerging Sciences, Pakistan</div></div>
-      <div class="person"><div class="n">Maryam Abdul Ghafoor</div><div class="r">Co-organiser</div><div class="a">Lahore University of Management Sciences, Pakistan</div></div>
+      <div class="person" style="--c:var(--ring-4)"><div class="av" aria-hidden="true">MA</div><div><b>Muhammad Sohaib Ayub</b><div class="role">General Chair</div><div class="aff">University of Galway, Ireland</div></div></div>
+      <div class="person" style="--c:var(--ring-5)"><div class="av" aria-hidden="true">UH</div><div><b>Umair ul Hassan</b><div class="role">Proceedings Chair</div><div class="aff">University of Galway, Ireland</div></div></div>
+      <div class="person" style="--c:var(--ring-1)"><div class="av" aria-hidden="true">RM</div><div><b>Rosemary Monahan</b><div class="role">Programme Co-Chair</div><div class="aff">Maynooth University, Ireland</div></div></div>
+      <div class="person" style="--c:var(--ring-2)"><div class="av" aria-hidden="true">AK</div><div><b>Asim Karim</b><div class="role">Programme Co-Chair</div><div class="aff">Lahore University of Management Sciences, Pakistan</div></div></div>
+      <div class="person" style="--c:var(--ring-6)"><div class="av" aria-hidden="true">EC</div><div><b>Edward Curry</b><div class="role">Advisory Chair</div><div class="aff">University of Galway, Ireland</div></div></div>
+      <div class="person" style="--c:var(--ring-3)"><div class="av" aria-hidden="true">SF</div><div><b>Safiullah Faizullah</b><div class="role">Advisory Chair</div><div class="aff">Islamic University of Madinah, Saudi Arabia</div></div></div>
+      <div class="person" style="--c:var(--ring-5)"><div class="av" aria-hidden="true">MA</div><div><b>Mian Muhammad Awais</b><div class="role">Co-organiser</div><div class="aff">Lahore University of Management Sciences, Pakistan</div></div></div>
+      <div class="person" style="--c:var(--ring-1)"><div class="av" aria-hidden="true">SA</div><div><b>Shafiq Alam</b><div class="role">Publicity Chair</div><div class="aff">Massey University, New Zealand</div></div></div>
+      <div class="person" style="--c:var(--ring-2)"><div class="av" aria-hidden="true">AR</div><div><b>Affan Rauf</b><div class="role">Web Chair</div><div class="aff">National University of Computer and Emerging Sciences, Pakistan</div></div></div>
+      <div class="person" style="--c:var(--ring-4)"><div class="av" aria-hidden="true">MG</div><div><b>Maryam Abdul Ghafoor</b><div class="role">Co-organiser</div><div class="aff">Lahore University of Management Sciences, Pakistan</div></div></div>
     </div>
-
-    <h3 class="sub">Programme committee</h3>
-    <p>The programme committee is drawn from the organising committee, which spans software engineering, accessibility, formal methods, AI, machine learning, and data science. We are extending it with additional reviewers from the software engineering and accessibility communities. If you would like to review for SE4All, please get in touch.</p>
+    <div class="pc">
+      <div>
+        <h3>Programme committee</h3>
+        <p>The programme committee is drawn from the organising committee and is being extended with additional reviewers from the software engineering and accessibility communities. If you would like to review for SE4All, please get in touch.</p>
+        <a class="btn ghost" href="mailto:muhammadsohaib.ayub@universityofgalway.ie?subject=Reviewing%20for%20SE4All%202027">Volunteer to review</a>
+      </div>
+      <div class="stat-row" aria-label="Committee at a glance">
+        <div class="stat"><b>10</b><span>organisers</span></div>
+        <div class="stat"><b>6</b><span>countries</span></div>
+        <div class="stat"><b>4</b><span>continents</span></div>
+        <div class="stat"><b>3+</b><span>reviews per paper</span></div>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div>
+        <h2>Get in touch</h2>
+        <p>Questions about the workshop or the call go to the general chair.</p>
+        <a class="mail" href="mailto:muhammadsohaib.ayub@universityofgalway.ie">muhammadsohaib.ayub@universityofgalway.ie</a>
+        <p style="margin-top:22px">SE4All 2027 is committed to being an accessible event. Guidance for authors and presenters will include practical accessibility advice, and you are welcome to write to us about access needs at any point, before or during the workshop.</p>
+        <a class="btn light" href="mailto:muhammadsohaib.ayub@universityofgalway.ie?subject=SE4All%202027">Email the chair</a>
+      </div>
+      <div class="links">
+        <a href="https://conf.researchr.org/home/icse-2027/se4all-2027" target="_blank" rel="noopener">SE4All on the ICSE 2027 site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        <a href="https://icse2027-se4all.hotcrp.com/" target="_blank" rel="noopener">Submissions on HotCRP <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        <a href="https://conf.researchr.org/home/icse-2027" target="_blank" rel="noopener">ICSE 2027, Dublin <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer id="contact" aria-labelledby="h-contact">
+<footer>
   <div class="wrap">
-    <div>
-      <h2 id="h-contact">Get in touch</h2>
-      <p>Questions about the workshop or the call go to the general chair:</p>
-      <p><a href="mailto:muhammadsohaib.ayub@universityofgalway.ie">muhammadsohaib.ayub@universityofgalway.ie</a></p>
-      <p class="foot-note">SE4All 2027 is committed to an accessible event. Guidance for authors and presenters will include practical accessibility advice, and you are welcome to write to us about access needs at any point, before or during the workshop.</p>
+    <div class="row">
+      <img src="assets/SE4All_logo_horizontal_no_year.svg" alt="SE4All, Workshop at ICSE" id="footlogo">
+      <span>SE4All 2027 is a workshop of ICSE 2027, 25 April to 1 May 2027, Dublin, Ireland.</span>
     </div>
-    <div>
-      <h2>Links</h2>
-      <p><a href="https://conf.researchr.org/home/icse-2027/SE4ALL-2027">SE4All on ICSE 2027</a></p>
-      <p><a href="https://icse2027-se4all.hotcrp.com/">Submissions (HotCRP)</a></p>
-      <p><a href="https://conf.researchr.org/home/icse-2027">ICSE 2027</a></p>
+    <p class="stmt">This site is built to meet WCAG 2.2 AA. It works with a keyboard alone, respects your reduced motion setting, and the accessibility button lets you change text size, spacing, and contrast. If anything gets in your way, please tell us.</p>
+    <div class="badge-row" aria-label="Accessibility features of this site">
+      <span class="badge">Keyboard navigable</span><span class="badge">Reduced motion aware</span><span class="badge">High contrast mode</span><span class="badge">Resizable text</span>
     </div>
   </div>
 </footer>
 
+<!-- ================= ACCESSIBILITY PANEL ================= -->
+<div class="a11y" id="a11y" data-open="false" role="dialog" aria-labelledby="a11y-title" aria-modal="false">
+  <h2 id="a11y-title">Accessibility settings</h2>
+  <p>Adjust the page to suit you. Your choices are kept on this device.</p>
+  <div class="row">
+    <label id="lbl-size">Text size</label>
+    <div class="seg" role="group" aria-labelledby="lbl-size">
+      <button type="button" data-size="1" aria-pressed="true">A</button>
+      <button type="button" data-size="1.15" aria-pressed="false" style="font-size:1.1em">A</button>
+      <button type="button" data-size="1.3" aria-pressed="false" style="font-size:1.25em">A</button>
+    </div>
+  </div>
+  <div class="row">
+    <label id="lbl-space">Wider letter and line spacing</label>
+    <button type="button" class="switch" role="switch" aria-checked="false" aria-labelledby="lbl-space" data-pref="spacing"></button>
+  </div>
+  <div class="row">
+    <label id="lbl-contrast">High contrast</label>
+    <button type="button" class="switch" role="switch" aria-checked="false" aria-labelledby="lbl-contrast" data-pref="contrast"></button>
+  </div>
+  <div class="row">
+    <label id="lbl-motion">Reduce motion</label>
+    <button type="button" class="switch" role="switch" aria-checked="false" aria-labelledby="lbl-motion" data-pref="motion"></button>
+  </div>
+  <div class="row">
+    <label id="lbl-dark">Dark theme</label>
+    <button type="button" class="switch" role="switch" aria-checked="false" aria-labelledby="lbl-dark" data-pref="theme"></button>
+  </div>
+  <div class="foot">
+    <button type="button" id="a11y-reset">Reset</button>
+    <button type="button" id="a11y-close">Close</button>
+  </div>
+</div>
+<button class="a11y-fab" id="a11y-open" type="button" aria-haspopup="dialog" aria-controls="a11y" aria-expanded="false">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4.5" r="2"/><path d="M4 8.5h16a1 1 0 0 1 0 2l-5.5.8v3.2l2.3 6.3a1 1 0 0 1-1.9.7L12 15.3l-2.9 6.2a1 1 0 0 1-1.9-.7l2.3-6.3v-3.2L4 10.5a1 1 0 0 1 0-2z"/></svg>
+  Accessibility
+</button>
+
+<script>
+(function(){
+  const root=document.documentElement;
+  const store=key=>{try{return localStorage.getItem('se4all:'+key)}catch(e){return null}};
+  const save=(key,v)=>{try{localStorage.setItem('se4all:'+key,v)}catch(e){}};
+
+  /* ---- preferences ---- */
+  const prefs={
+    theme:v=>{root.setAttribute('data-theme',v?'dark':'light');const b=document.getElementById('themebtn');if(b){b.setAttribute('aria-pressed',String(v));b.setAttribute('aria-label',v?'Switch to light theme':'Switch to dark theme');b.querySelector('span').textContent=v?'Light':'Dark';}
+      const fl=document.getElementById('footlogo');if(fl){fl.src=v?'assets/SE4All_logo_dark_no_year.svg':'assets/SE4All_logo_horizontal_no_year.svg';}},
+    contrast:v=>root.setAttribute('data-contrast',v?'high':'normal'),
+    motion:v=>root.setAttribute('data-motion',v?'reduced':'normal'),
+    spacing:v=>root.setAttribute('data-spacing',v?'wide':'normal')
+  };
+  function applyPref(k,v){prefs[k](v);document.querySelectorAll('[data-pref="'+k+'"]').forEach(s=>s.setAttribute('aria-checked',String(v)));}
+  function setSize(s){root.style.setProperty('--fs',s+'rem');document.querySelectorAll('[data-size]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.size===String(s))));}
+
+  // initial state: saved prefs, otherwise system settings
+  const sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const sysMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  applyPref('theme',store('theme')!==null?store('theme')==='1':sysDark);
+  applyPref('contrast',store('contrast')==='1');
+  applyPref('motion',store('motion')!==null?store('motion')==='1':sysMotion);
+  applyPref('spacing',store('spacing')==='1');
+  setSize(store('size')||'1');
+
+  document.querySelectorAll('[data-pref]').forEach(s=>s.addEventListener('click',()=>{const k=s.dataset.pref;const v=s.getAttribute('aria-checked')!=='true';applyPref(k,v);save(k,v?'1':'0');}));
+  document.querySelectorAll('[data-size]').forEach(b=>b.addEventListener('click',()=>{setSize(b.dataset.size);save('size',b.dataset.size);}));
+  document.getElementById('themebtn').addEventListener('click',()=>{const v=root.getAttribute('data-theme')!=='dark';applyPref('theme',v);save('theme',v?'1':'0');});
+  document.getElementById('a11y-reset').addEventListener('click',()=>{['theme','contrast','motion','spacing','size'].forEach(k=>{try{localStorage.removeItem('se4all:'+k)}catch(e){}});applyPref('theme',sysDark);applyPref('contrast',false);applyPref('motion',sysMotion);applyPref('spacing',false);setSize('1');});
+
+  /* ---- panel open / close ---- */
+  const panel=document.getElementById('a11y'),fab=document.getElementById('a11y-open');
+  function openPanel(){panel.dataset.open='true';fab.setAttribute('aria-expanded','true');panel.querySelector('button').focus();}
+  function closePanel(){panel.dataset.open='false';fab.setAttribute('aria-expanded','false');fab.focus();}
+  fab.addEventListener('click',openPanel);
+  document.getElementById('a11y-close').addEventListener('click',closePanel);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel.dataset.open==='true')closePanel();});
+
+  /* ---- mobile menu ---- */
+  const menubtn=document.getElementById('menubtn'),nav=document.getElementById('mainnav');
+  menubtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menubtn.setAttribute('aria-expanded',String(open));menubtn.setAttribute('aria-label',open?'Close menu':'Open menu');});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menubtn.setAttribute('aria-expanded','false');}));
+
+  /* ---- scroll progress and current section ---- */
+  const prog=document.getElementById('progress');
+  const links=[...nav.querySelectorAll('a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  function onScroll(){
+    const h=document.documentElement;const max=h.scrollHeight-h.clientHeight;prog.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+    let cur=null;secs.forEach(s=>{if(s.getBoundingClientRect().top<=120)cur=s;});
+    links.forEach(a=>{if(cur&&a.getAttribute('href')==='#'+cur.id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');});
+  }
+  document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* ---- countdown ---- */
+  const deadline=new Date('2026-11-14T12:00:00Z'); // 13 Nov 2026, anywhere on Earth
+  const workshop=new Date('2027-05-01T08:00:00Z');
+  function tick(){
+    const now=new Date();const num=document.getElementById('cd-num'),unit=document.getElementById('cd-unit');
+    let target=deadline,label='days until the submission deadline';
+    if(now>deadline){target=workshop;label='days until the workshop in Dublin';}
+    if(now>workshop){num.textContent='';unit.textContent='SE4All 2027 has taken place. Thank you to everyone who came.';return;}
+    const ms=target-now;const d=Math.floor(ms/864e5),hrs=Math.floor(ms%864e5/36e5);
+    num.textContent=d>0?d:hrs;unit.textContent=d>0?label:label.replace('days','hours');
+  }
+  tick();setInterval(tick,6e4);
+
+  /* ---- timeline progress ---- */
+  const items=[...document.querySelectorAll('.tl')];const now=new Date();let nextIdx=-1;
+  items.forEach((li,i)=>{const d=new Date(li.dataset.date);if(now>d){li.classList.add('done');li.querySelector('.what').insertAdjacentHTML('beforeend',' <span class="pill">passed</span>');}else if(nextIdx<0){nextIdx=i;li.classList.add('next');li.querySelector('.what').insertAdjacentHTML('beforeend',' <span class="pill">next</span>');}});
+  const fill=document.getElementById('tlfill');
+  requestAnimationFrame(()=>{const done=items.filter(l=>l.classList.contains('done'));if(done.length){const last=done[done.length-1];const list=document.getElementById('timeline');fill.style.height=(last.offsetTop-list.offsetTop+14)+'px';}});
+
+  /* ---- expand all topics ---- */
+  const ex=document.getElementById('expandall');const tops=[...document.querySelectorAll('.topic')];
+  ex.addEventListener('click',()=>{const allOpen=tops.every(t=>t.open);tops.forEach(t=>t.open=!allOpen);ex.textContent=allOpen?'Expand all topics':'Collapse all topics';});
+
+  /* ---- calendar file ---- */
+  document.getElementById('ics').addEventListener('click',e=>{
+    e.preventDefault();
+    const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//SE4All//2027//EN','BEGIN:VEVENT','UID:se4all-2027-deadline@se4all.github.io','DTSTAMP:20260907T000000Z','DTSTART;VALUE=DATE:20261113','DTEND;VALUE=DATE:20261114','SUMMARY:SE4All 2027 paper submission deadline (AoE)','URL:https://icse2027-se4all.hotcrp.com/','END:VEVENT','BEGIN:VEVENT','UID:se4all-2027-workshop@se4all.github.io','DTSTAMP:20260907T000000Z','DTSTART;VALUE=DATE:20270501','DTEND;VALUE=DATE:20270502','SUMMARY:SE4All 2027 workshop at ICSE\\, Dublin','LOCATION:The Convention Centre Dublin','URL:https://se4all.github.io/','END:VEVENT','END:VCALENDAR'].join('\r\n');
+    const a=document.createElement('a');a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);a.download='SE4All-2027.ics';document.body.appendChild(a);a.click();a.remove();
+  });
+
+  /* ---- replay the emblem when it scrolls back into view is deliberately not done: one reveal only ---- */
+})();
+</script>
 </body>
 </html>
