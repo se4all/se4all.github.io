@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SE4All 2027 · International Workshop on Software Engineering and AI for All · ICSE 2027, Dublin</title>
-<meta name="description" content="SE4All is the first ICSE workshop dedicated to software engineering and AI for accessibility and inclusion. Saturday 1 May 2027, Dublin, Ireland. Papers due 13 November 2026.">
+<meta name="description" content="SE4All is the first ICSE workshop dedicated to software engineering and AI for accessibility and inclusion. Saturday 1 May 2027, Dublin, Ireland. Papers due 20 November 2026 (extended).">
 <meta name="theme-color" content="#1B2A49">
 <link rel="canonical" href="https://se4all.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SE4All 2027 · Software Engineering and AI for All">
-<meta property="og:description" content="First ICSE workshop on software engineering and AI for accessibility and inclusion. 1 May 2027, Dublin. Papers due 13 November 2026.">
+<meta property="og:description" content="First ICSE workshop on software engineering and AI for accessibility and inclusion. 1 May 2027, Dublin. Papers due 20 November 2026 (extended).">
 <meta property="og:url" content="https://se4all.github.io/">
 <meta property="og:image" content="https://se4all.github.io/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -308,7 +308,7 @@ footer .stmt{max-width:70ch;margin-top:14px}
       <div class="facts" role="list">
         <div class="fact" role="listitem"><b>Saturday 1 May 2027</b><span>Workshop day</span></div>
         <div class="fact" role="listitem"><b>Dublin, Ireland</b><span>Convention Centre Dublin</span></div>
-        <div class="fact due" role="listitem"><b>13 November 2026</b><span>Papers due</span></div>
+        <div class="fact due" role="listitem"><b>20 November 2026</b><span>Papers due (extended)</span></div>
       </div>
       <div class="cta">
         <a class="btn primary" href="https://icse2027-se4all.hotcrp.com/" target="_blank" rel="noopener">Submit a paper</a>
@@ -428,7 +428,7 @@ footer .stmt{max-width:70ch;margin-top:14px}
     <div>
       <ol class="timeline" id="timeline">
         <span class="fill" id="tlfill" aria-hidden="true"></span>
-        <li class="tl" data-date="2026-11-14T12:00:00Z"><time datetime="2026-11-13">13 November 2026</time><span class="what">Paper submission deadline</span></li>
+        <li class="tl" data-date="2026-11-21T12:00:00Z"><time datetime="2026-11-20">20 November 2026</time><span class="what">Paper submission deadline (extended from 13 November)</span></li>
         <li class="tl" data-date="2026-12-12T12:00:00Z"><time datetime="2026-12-11">11 December 2026</time><span class="what">Author notification</span></li>
         <li class="tl" data-date="2027-01-21T12:00:00Z"><time datetime="2027-01-20">20 January 2027</time><span class="what">Accepted papers and programme published</span></li>
         <li class="tl" data-date="2027-01-30T12:00:00Z"><time datetime="2027-01-29">29 January 2027</time><span class="what">Camera ready deadline</span></li>
@@ -613,7 +613,7 @@ footer .stmt{max-width:70ch;margin-top:14px}
   document.addEventListener('scroll',onScroll,{passive:true});onScroll();
 
   /* ---- countdown ---- */
-  const deadline=new Date('2026-11-14T12:00:00Z'); // 13 Nov 2026, anywhere on Earth
+  const deadline=new Date('2026-11-21T12:00:00Z'); // 20 Nov 2026, anywhere on Earth
   const workshop=new Date('2027-05-01T08:00:00Z');
   function tick(){
     const now=new Date();const num=document.getElementById('cd-num'),unit=document.getElementById('cd-unit');
@@ -638,7 +638,7 @@ footer .stmt{max-width:70ch;margin-top:14px}
   /* ---- calendar file ---- */
   document.getElementById('ics').addEventListener('click',e=>{
     e.preventDefault();
-    const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//SE4All//2027//EN','BEGIN:VEVENT','UID:se4all-2027-deadline@se4all.github.io','DTSTAMP:20260907T000000Z','DTSTART;VALUE=DATE:20261113','DTEND;VALUE=DATE:20261114','SUMMARY:SE4All 2027 paper submission deadline (AoE)','URL:https://icse2027-se4all.hotcrp.com/','END:VEVENT','BEGIN:VEVENT','UID:se4all-2027-workshop@se4all.github.io','DTSTAMP:20260907T000000Z','DTSTART;VALUE=DATE:20270501','DTEND;VALUE=DATE:20270502','SUMMARY:SE4All 2027 workshop at ICSE\\, Dublin','LOCATION:The Convention Centre Dublin','URL:https://se4all.github.io/','END:VEVENT','END:VCALENDAR'].join('\r\n');
+    const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//SE4All//2027//EN','BEGIN:VEVENT','UID:se4all-2027-deadline@se4all.github.io','DTSTAMP:20260907T000000Z','DTSTART;VALUE=DATE:20261120','DTEND;VALUE=DATE:20261121','SUMMARY:SE4All 2027 paper submission deadline (AoE)','URL:https://icse2027-se4all.hotcrp.com/','END:VEVENT','BEGIN:VEVENT','UID:se4all-2027-workshop@se4all.github.io','DTSTAMP:20260907T000000Z','DTSTART;VALUE=DATE:20270501','DTEND;VALUE=DATE:20270502','SUMMARY:SE4All 2027 workshop at ICSE\\, Dublin','LOCATION:The Convention Centre Dublin','URL:https://se4all.github.io/','END:VEVENT','END:VCALENDAR'].join('\r\n');
     const a=document.createElement('a');a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);a.download='SE4All-2027.ics';document.body.appendChild(a);a.click();a.remove();
   });
 
